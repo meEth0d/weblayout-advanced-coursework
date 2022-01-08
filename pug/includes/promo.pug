@@ -1,0 +1,32 @@
+section.promo
+    h1.visually-hidden
+        | SitDownPls - магазин мебели
+    .swiper-container.promo__swiper.js-promo-swiper
+        .swiper-wrapper
+            .swiper-slide.promo__slide1
+                .container
+                    .slide__inner
+                        .promo__sale
+                            | Скидка&nbsp;15%
+                            br.brake-mobile 
+                            |  на&nbsp;первую покупку
+                        +buttonFilled("Получить", ["promo__btn"])
+
+            .swiper-slide.promo__slide2
+                .container
+                    .slide__inner
+                        .promo__sale
+                            | 1000+ аксессуаров для дома
+                        +buttonFilled("Подробнее", ["promo__btn"])
+
+            .swiper-slide.promo__slide3
+                .container
+                    .slide__inner
+                        .promo__sale.promo__sale--white
+                            | Коллекция стильного и&nbsp;яркого текстиля
+                        +buttonFilled("Подробнее", ["promo__btn"])
+                
+        .swiper-pagination
+
+    .container.promo-btn-container
+        +buttonFilled("Получить", ["promo__btn--mobile"])

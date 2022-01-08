@@ -1,0 +1,289 @@
+.feedback {
+  margin-bottom: 70px;
+  overflow: hidden;
+
+  @include tablet() {
+    margin-bottom: 52px;
+  }
+
+  @include phablet() {
+    margin-bottom: 68px;
+  }
+
+  @include mobile() {
+    margin-bottom: 71px;
+  }
+
+  &__title {
+    margin-bottom: 9px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+
+    @include laptop() {
+      grid-template-columns: 1fr 517px;
+    }
+
+    @include tablet() {
+      grid-template-columns: 1fr 187px;
+    }
+
+    @include phablet() {
+      display: block;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  &__tooltip {
+    position: relative;
+    margin-left: 5px;
+    margin-top: 2px;
+    cursor: pointer;
+    display: inline-block;
+    background-image: url("images/question.svg");
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 14px;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background-image: url("images/question-hover.svg");
+    }
+
+    &:hover::before,
+    &:hover::after {
+      opacity: 1;
+      z-index: 2;
+    }
+
+    &::before {
+      content: "Реплицированные с зарубежных источников, исследования формируют глобальную сеть.";
+      position: absolute;
+      top: -70px;
+      left: -68px;
+      width: 157px;
+      height: 58px;
+      padding-top: 7px;
+      background-color: var(--black);
+      color: var(--white);
+      font-size: 9px;
+      line-height: 14px;
+      text-align: center;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -17px;
+      transform: rotate(45deg);
+      left: 1px;
+      width: 12px;
+      height: 12px;
+      background-color: var(--black);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    @include mobile {
+      margin-left: 2px;
+    }
+  }
+
+  &__input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border: 2px solid var(--grey-light);
+    width: 100%;
+    padding: 17px;
+    margin-bottom: 28px;
+    border-radius: 10px;
+    color: var(--black);
+    background-color: var(--grey-light);
+    transition: background 0.2s ease;
+
+    &:hover {
+      background-color: #eaeaea;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: #f8efff;
+      border-color: #a65cf0;
+    }
+  }
+
+  &__button {
+    @include laptop() {
+      margin-bottom: 12px;
+      padding: 16px 32px;
+    }
+
+    @include tablet() {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__link {
+    color: var(--primary-main);
+  }
+
+  &__img {
+    max-width: 100%;
+    transform: translateY(-17px);
+
+    @include laptop() {
+      transform: translateY(32px);
+    }
+
+    @include tablet() {
+      width: unset;
+      margin-top: 0;
+      transform: translateY(-28px);
+    }
+
+    @include phablet() {
+      display: none;
+    }
+  }
+
+  &__span:hover {
+    outline: 1px solid var(--primary-main);
+  }
+
+  &__checkbox {
+    display: block;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  &__label {
+    position: relative;
+    display: inline-block;
+    padding-left: 22px;
+  }
+
+  &__span {
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+
+    @include phablet() {
+      font-size: 12px;
+    }
+  }
+
+  &__span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--grey);
+    border-radius: 2px;
+  }
+
+  &__span::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
+    border: solid var(--white);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    transition: border 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    opacity: 0;
+  }
+
+  &__button {
+    margin-bottom: 12px;
+    padding: 17px 32px;
+
+    @include mobile() {
+      margin-bottom: 9px;
+    }
+  }
+
+  &__text-brake {
+    display: none;
+
+    @include laptop() {
+      display: block;
+    }
+
+    @include mobile() {
+      display: none;
+    }
+  }
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+
+  &:checked + .feedback__span::before {
+    border-color: var(--primary-main);
+    background-color: var(--primary-main);
+  }
+
+  &:checked + .feedback__span::after {
+    opacity: 1;
+  }
+
+  &:checked + &__span::before {
+    border-color: var(--primary-main);
+    background-color: var(--primary-main);
+  }
+
+  &:checked + &__span::after {
+    opacity: 1;
+  }
+
+  &__span:hover {
+    outline: 1px solid var(--primary-main);
+  }
+
+  &:focus + &__span {
+    outline: 1px solid var(--primary-main);
+  }
+}
+
+.js-validate-error-label {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--red-input) !important;
+  background: unset;
+}
+
+.js-validate-error-field {
+  border: 2px solid var(--red-input) !important;
+}
+
+.js-validate-success-field {
+  border: 2px solid var(--green-input);
+}
+
+.just-validate-tooltip-container:last-child {
+  .js-validate-error-label {
+    position: absolute;
+    top: 14px;
+  }
+}
