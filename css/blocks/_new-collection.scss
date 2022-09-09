@@ -1,0 +1,103 @@
+.new-collection {
+  margin-bottom: 70px;
+  padding-top: 157px;
+  padding-bottom: 154px;
+
+  background-image: url("images/new-collection-banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  padding-top: 158px;
+  padding-bottom: 147px;
+
+  @include laptop {
+    padding: 156px 0;
+  } 
+
+  @include tablet() {
+    padding: 158px 0 154px;
+    margin-bottom: 65px;
+  }
+
+  @include mobile() {
+    position: relative;
+    padding-top: 32px;
+    padding-bottom: 160px;
+    background-position: top center;
+    background-size: 675px;
+  }
+
+  @include mobile() {
+    margin-bottom: 19px;
+    padding: 34px 0 51px;
+  }
+
+  &__container {
+    @include tablet() {
+      padding: 0 36px;
+    }
+
+    @include phablet() {
+      padding: 0 14px;
+    }
+  }
+
+  &__description {
+    width: 508px;
+
+    @include phablet() {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    font-family: "PlayFair", sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    color: var(--gold);
+
+    @include phablet() {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 42px;
+    font-size: 48px;
+    line-height: 60px;
+    color: var(--white);
+
+    @include tablet() {
+      margin-bottom: 46px;
+    }
+
+    @include phablet() {
+      margin-bottom: 142px;
+      width: 158px;
+      line-height: 20px;
+      font-size: 16px;
+    }
+
+    
+  }
+
+  &__btn {
+    display: block;
+    margin: 0;
+    padding: 22px 29px;
+
+    @include laptop() {
+      padding: 19px 29px;
+    }
+
+    @include phablet() {
+      margin: 0 auto;
+      padding: 20px 84px;
+    }
+  }
+}

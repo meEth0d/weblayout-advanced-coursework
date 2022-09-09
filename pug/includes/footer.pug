@@ -1,0 +1,63 @@
+include ./mixins.pug
+
+footer.footer
+    .footer__content.container
+        .footer__left-column
+            .footer__logo
+                +logo()
+            ul.footer__social-list
+                li.footer__item
+                    a(href="#" class="footer__social-link")
+                        +fbIcon()
+                li.footer__item
+                    a(href="#" class="footer__social-link")
+                        +vkIcon()
+                li.footer__item
+                    a(href="#" class="footer__social-link")
+                        +instIcon()
+        .footer__right-column
+            ul.footer__list
+                li.footer__item
+                    | О нас
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | О компании
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Блог
+            ul.footer__list
+                li.footer__item
+                    | Услуги
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Доставка
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Рассрочка и кредит
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Сборка и установка
+            ul.footer__list
+                li.footer__item
+                    | Связь с нами
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Обратная связь
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Контакты
+            ul.footer__list
+                li.footer__item
+                    | Сотрудничество
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Поставщикам
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Оптовикам
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Карьера
+    .footer__copyright
+        p.footer__copyright-text
+            | SDP&reg; &nbsp;2011-2021
